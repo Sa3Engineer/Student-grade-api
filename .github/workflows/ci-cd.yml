@@ -52,4 +52,4 @@ jobs:
           push: true 
           tags: | 
             ${{ secrets.DOCKERHUB_USERNAME }}/student-grade-api:latest 
-            ${{ secrets.DOCKERHUB_USERNAME }}/student-grade-api:${{ github.sha }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/student-grade-api:${{ github.sha }} 

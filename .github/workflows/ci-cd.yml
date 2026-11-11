@@ -51,6 +51,6 @@ jobs:
         with: 
           context: . 
           push: true 
-          tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/student-grade-api:latest 
-            ${{ secrets.DOCKERHUB_USERNAME }}/student-grade-api:${{ github.sha }} 
+          tags: 
+            salma3ah5/student-grade-api:latest 
+            salma3ah5/student-grade-api:${{ github.sha }} 

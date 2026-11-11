@@ -41,7 +41,7 @@ jobs:
         uses: docker/login-action@v3 
         with: 
           username: salma3ah5 
-          password: dckr_pat_iHodmJ6Pac53pTr9VSeVgvqsxEA
+          password: Salma@4588
           logout: true 
   
       # 6) Build the Docker image and push it to Docker Hub 

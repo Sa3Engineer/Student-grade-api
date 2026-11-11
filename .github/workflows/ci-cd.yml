@@ -32,7 +32,7 @@ jobs:
       # 4) Run SonarQube Cloud analysis 
       - name: SonarQube Cloud scan 
         env: 
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} 
+          SONAR_TOKEN: eda71212d1b31bb9566d34211b2185208309d0b0
         run: mvn --batch-mode sonar:sonar 
   
       # 5) Log in to Docker Hub (only on push to main) 
@@ -41,7 +41,7 @@ jobs:
         uses: docker/login-action@v3 
         with: 
           username: salma3ah5 
-          password: Salma@4588
+          password: dckr_pat_iHodmJ6Pac53pTr9VSeVgvqsxEA
           logout: true 
   
       # 6) Build the Docker image and push it to Docker Hub 
@@ -51,6 +51,6 @@ jobs:
         with: 
           context: . 
           push: true 
-          tags: 
-            salma3ah5/student-grade-api:latest 
-            salma3ah5/student-grade-api:${{ github.sha }} 
+          tags: | 
+            ${{ secrets.DOCKERHUB_USERNAME }}/student-grade-api:latest 
+            ${{ secrets.DOCKERHUB_USERNAME }}/student-grade-api:${{ github.sha }}  

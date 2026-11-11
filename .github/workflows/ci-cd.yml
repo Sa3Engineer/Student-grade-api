@@ -40,8 +40,8 @@ jobs:
         if: github.event_name == 'push' 
         uses: docker/login-action@v3 
         with: 
-          username: salma3ah5
-          password: Salma@4588 
+          username: ${{ secrets.DOCKERHUB_USERNAME }} 
+          password: ${{ secrets.DOCKERHUB_TOKEN }} 
   
       # 6) Build the Docker image and push it to Docker Hub 
       - name: Build and push Docker image 
@@ -51,5 +51,5 @@ jobs:
           context: . 
           push: true 
           tags: |
-            salma3ah5 student-grade-api:latest 
-            salma3ah5 /student-grade-api:${{ github.sha }} 
+            ${{ secrets.DOCKERHUB_USERNAME }}/student-grade-api:latest 
+            ${{ secrets.DOCKERHUB_USERNAME }}/student-grade-api:${{ github.sha }} 
